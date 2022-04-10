@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "parse": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "extends": ["eslint:recommended"]
+}
