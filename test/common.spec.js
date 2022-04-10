@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { add } from '../src/common.js'
+import { add } from '../src/index.js'
 
 describe('common: add', function () {
   it('params addition', function () {

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "rollup --config --watch",
     "build": "rollup --config",
-    "test": "mocha test/*.spec.js"
+    "test": "mocha test/*.spec.js",
+    "coverage": "c8 npm run test"
   },
   "repository": {
     "type": "git",
