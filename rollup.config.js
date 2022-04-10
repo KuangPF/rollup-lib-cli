@@ -7,15 +7,15 @@ import nodeBuiltins from 'rollup-plugin-node-builtins'
 const basePlugins = [
   nodeResolve({
     preferBuiltins: true,
-    mainFields: ['browser', 'jsnext','module', 'main']
+    mainFields: ['browser', 'jsnext', 'module', 'main'],
   }),
   nodeBuiltins(),
   commonjs(),
   babel({
-    presets:[['@babel/preset-env']],
-    exclude:; 'node_modules/**',
-    babelHelpers: 'bundled'
-  })
+    presets: [['@babel/preset-env']],
+    exclude: 'node_modules/**',
+    babelHelpers: 'bundled',
+  }),
 ]
 
 const developmentPlugin = basePlugins
@@ -23,31 +23,16 @@ const productionPlugins = basePlugins.concat(terser())
 
 export default {
   input: 'src/index',
-  output:[
+  output: [
     {
       file: 'dist/index.es.js',
-      format: 'es'
-    },{
-      file:'dist/index.js',
+      format: 'es',
+    },
+    {
+      file: 'dist/index.js',
       format: 'umd',
-      name: 'RollupCli'
+      name: 'RollupCli',
     },
   ],
-  plugins: process.env.NODE_ENV === 'development'? developmentPlugin: productionPlugins
+  plugins: process.env.NODE_ENV === 'development' ? developmentPlugin : productionPlugins,
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
